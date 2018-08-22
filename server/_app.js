@@ -10,7 +10,7 @@ import routes from '../src/routes';
 const App = ({ authenticated, checked }) => (
   <Fragment>
     <Helmet>
-      <title>RS React Redux Base</title>
+      <title>Target MVD</title>
     </Helmet>
     {checked &&
       <Switch>

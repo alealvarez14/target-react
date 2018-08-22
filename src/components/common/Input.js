@@ -14,9 +14,9 @@ const Input = ({
   <div>
     {label && <label>{label}</label>}
     <div>
-      <input {...input} {...{ placeholder, type }} />
+      <input className="fields" {...input} {...{ placeholder, type }} />
       {touched && error &&
-        <span>
+        <span className="error-message">
           <FormattedMessage
             id={parseInputErrors(error)}
             defaultMessage={parseInputErrors(error)}
