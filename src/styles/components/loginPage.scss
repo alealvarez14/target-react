@@ -1,0 +1,52 @@
+@import '../styles/_settings';
+
+.login-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 4rem;
+
+  .form-container { padding-top: 5rem; }
+
+  .bottom-container {
+    padding-top: 3rem;
+
+    h2 { font-size: 1.4em; }
+
+    hr { width: 15rem; }
+
+    a {
+      color: $black;
+      font-size: 1.2em;
+      font-weight: 300;
+    }
+  }
+}
+
+.video {
+  background-color: map-get($foundation-palette, primary);
+  min-height: 100vh;
+  padding-top: 3rem;
+
+  .image-centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .phone-img { width: 30rem; }
+
+  .store-img { width: 15rem; }
+
+  .social-img {
+    width: 4rem;
+
+    &:first-child { margin-right: 2rem; }
+  }
+
+  .social-img-container {
+    text-align: center;
+    padding-top: 2rem;
+  }
+}
