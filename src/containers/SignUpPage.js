@@ -5,6 +5,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 
 import { signUp } from '../actions/userActions';
+import VideoDisplay from '../components/common/VideoDisplay';
 import SignUpForm from '../components/user/SignUpForm';
 import routes from '../constants/routesPaths';
 
@@ -14,12 +15,22 @@ const SignUpPage = ({ signUp, authenticated }) => {
   }
 
   return (
-    <div>
-      <p><FormattedMessage id="signup.title" /></p>
-      <SignUpForm onSubmit={signUp} />
-      <Link to={routes.login}>
-        <FormattedMessage id="signup.signin" />
-      </Link>
+    <div className="grid-x">
+      <div className="cell medium-auto login-container">
+        <h1 className="uppercase-title"><FormattedMessage id="signup.title" /></h1>
+        <div className="form-container">
+          <SignUpForm onSubmit={signUp} />
+          <div className="bottom-container">
+            <hr />
+            <Link to={routes.login}>
+              <FormattedMessage id="signup.signin" />
+            </Link>
+          </div>
+        </div>
+      </div>
+      <div className="cell medium-auto">
+        <VideoDisplay />
+      </div>
     </div>
   );
 };

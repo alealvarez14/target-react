@@ -4,8 +4,8 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  text-align: center;
   padding: 4rem;
+  text-align: center;
 
   .form-container { padding-top: 5rem; }
 
@@ -20,6 +20,7 @@
       color: $black;
       font-size: 1.2em;
       font-weight: 300;
+      text-transform: uppercase;
     }
   }
 }
@@ -46,7 +47,7 @@
   }
 
   .social-img-container {
-    text-align: center;
     padding-top: 2rem;
+    text-align: center;
   }
 }

@@ -1,20 +1,23 @@
 import React from 'react';
-import { string, object } from 'prop-types';
+import { array, string, object } from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
 import { parseInputErrors } from '../../utils/helpers';
 
-const Input = ({
+const SelectInput = ({
   input,
+  defaultLabel,
   label,
-  type,
-  placeholder,
+  values,
   meta: { touched, error }
 }) => (
   <div>
     {label && <label>{label}</label>}
-    <div>
-      <input className="fields" {...input} {...{ placeholder, type }} />
+    <div className="options-input">
+      <select className="fields" {...input} {...{ label }}>
+        <option value="" disabled="true">{defaultLabel}</option>
+        {values.map((item, index) => (<option key={index}> {item} </option>))}
+      </select>
       {touched && error &&
         <span className="error-message">
           <FormattedMessage
@@ -27,12 +30,12 @@ const Input = ({
   </div>
 );
 
-Input.propTypes = {
+SelectInput.propTypes = {
   input: object.isRequired,
+  defaultLabel: string,
   label: string,
-  type: string.isRequired,
-  placeholder: string,
   meta: object,
+  values: array
 };
 
-export default Input;
+export default SelectInput;
