@@ -19,6 +19,9 @@ export default {
   'signup.form.gender': 'Gender',
   'signup.form.submit': 'Sign up',
 
+  'forgotpassword.title': 'Forgot password',
+  'forgotpassword.form.submit': 'Submit',
+
   'logout.button': 'LOGOUT',
 
   'home.welcome': 'Welcome to React Redux Base',

@@ -30,5 +30,11 @@ export const signUp = {
   }
 };
 
+export const forgotPass = {
+  email: {
+    presence: { message: 'email.presence' }
+  }
+};
+
 export const validations = (constraints, props = {}) =>
   data => validate(data.toJS(), constraints, props) || {};

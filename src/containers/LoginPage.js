@@ -8,7 +8,7 @@ import LoginForm from '../components/user/LoginForm';
 import VideoDisplay from '../components/common/VideoDisplay';
 import { login } from '../actions/sessionActions';
 import routes from '../constants/routesPaths';
-import * as smilies from '../assets/smilies.svg';
+import smilies from '../assets/smilies.svg';
 import '../styles/components/loginPage.scss';
 
 const LoginPage = ({ login, authenticated }) => {
