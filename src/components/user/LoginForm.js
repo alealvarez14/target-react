@@ -7,9 +7,12 @@ import {
   defineMessages,
   FormattedMessage
 } from 'react-intl';
+import { Link } from 'react-router-dom';
 
 import Loading from '../common/Loading';
 import Input from '../common/Input';
+import Errors from '../common/Errors';
+import routes from '../../constants/routesPaths';
 import { validations, login } from '../../utils/constraints';
 
 const messages = defineMessages({
@@ -17,21 +20,10 @@ const messages = defineMessages({
   password: { id: 'login.form.password' }
 });
 
-const DisplayErrors = ({ errors }) => {
-  if (!errors) {
-    return;
-  }
-  return (
-    <ul className="error-bullets">
-      {errors.map((item, index) => <li key={index}>{item}</li>)}
-    </ul>
-  );
-};
-
 export const LoginForm = ({ handleSubmit, error, submitting, intl }) => (
   <div>
     <form onSubmit={handleSubmit}>
-      {error && <DisplayErrors errors={error} />}
+      {error && <Errors errors={error} />}
       <div>
         <Field
           name="email"
@@ -56,7 +48,11 @@ export const LoginForm = ({ handleSubmit, error, submitting, intl }) => (
       </div>
     </form>
     <br />
-    <p className="information-text"><FormattedMessage id="login.forgot_password" /></p>
+    <p className="information-text">
+      <Link to={routes.forgotPassword} style={{ color: 'black' }}>
+        <FormattedMessage id="login.forgot_password" />
+      </Link>
+    </p>
   </div>
 );
 
